@@ -23,12 +23,11 @@ app.use(express.json());
 app.use(urlencoded({ extended: true }));
 
 const corsOptions = {
-    origin: ['https://tracku.onrender.com'],
+    origin: ['http://localhost:5173', 'https://tracku.onrender.com'],
     credentials: true
 };
 
 app.use(cors(corsOptions));
-
 //apis will fetch here
 app.use('/user', userRoute);
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
